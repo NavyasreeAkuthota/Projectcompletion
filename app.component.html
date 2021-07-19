@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="app.component.css" type="text/css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body> 
+<div class="container-fluid bg"> I
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+<div class="col-md-4 col-sm-4 col-xs-12">
+  <form class="form-conatiner" #regForm="ngForm" (ngSubmit)="Registers(regForm)" novalidate>
+    <h1>Sign In</h1>
+    <div class="form-group ">
+      <label for="exampleInputEmail1">Email address:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" required email #email="ngModel" formControlName="email" placeholder="Email" ngModel> 
+        
+    </div> <br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" required minlength="6" #password="ngModel" formControlName="password" placeholder="Password" ngModel>
+    </div> <br>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Login</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button type="submit" class="btn btn-default">Cancel</button> <br>
+    <span class="psw">Forget<a href="#">password?</a></span>
+  </form>
+  <div *ngIf="data!=null">
+    <p>Email:{{data.email}}</p>
+    <p>Password:{{data.password}}</p>
+  </div>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+</div>
+</div>
+</body>
+</html> 
+<!-- <app-signup></app-signup>  
+<app-forgetpassword></app-forgetpassword>
+<app-adminlogin></app-adminlogin>
+<app-newconnection></app-newconnection>
+<app-adminlogin></app-adminlogin>
+<app-forgetpassword></app-forgetpassword>  
+<router-outlet></router-outlet> 
+<app-signup></app-signup> -->
+<router-outlet></router-outlet>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="signup.component.css" type="text/css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background:url('../assets/background.jpg') ;">
+<div class="container-fluid bg"> I
+<div class="row">
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+<div class="col-md-4 col-sm-4 col-xs-12">
+  <form class="form-conatiner" [formGroup]="registerForm" #f="ngForm" (ngsubmit)="submitData()">
+    <h1>Sign Up</h1>
+    <div class="form-group " >
+      <label for="exampleInputEmail1">Email address:</label>
+      <input type="text" formControllName="emailId" class="form-control" id="exampleInputEmail1" placeholder="Email" >
+       <div *ngIf="emailid.invalid && (emailid.touched|| emailid.dirty)">
+        <span  class="error" *ngIf="emailid.errors?.required"> *Email address is required.</span>
+        <span class="error" *ngIf="emailid.errors?.email">*Enter valid email address </span> 
+
+       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Name:</label>
+      <input type="text"  formControllName="name" class="form-control" id="exampleInputPassword1" placeholder="Name">
+    <div *ngIf="name.invalid && (name.touched||name.dirty)">
+      <span  class="error" *ngIf="name.errors?.required"> *Name is required.</span>
+      <span class="error" *ngIf="name.errors?.pattern">*Enter only  characters.</span>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password:</label>
+        <input type="password"  formControllName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Confirm password:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mobile number:</label>
+        <input type="password"  formControllName="mobile number" class="form-control" id="exampleInputPassword1" placeholder="Mobile number">
+      </div>
+  
+    <button type="submit" class="btn btn-default">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button type="submit" class="btn btn-default">Cancel</button> <br>
+
+  </form>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+</div>
+</div>
+</body>
+</html>
